@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useAuth } from '../context/AuthContext';
 import axios from 'axios';
-import { LogOut, Plus, Edit, Trash2, Upload, AlertTriangle, X } from 'lucide-react';
+import { LogOut, Plus, Edit, Trash2, AlertTriangle } from 'lucide-react';
 import PatientForm from '../components/PatientForm';
 
 interface Patient {

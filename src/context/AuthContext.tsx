@@ -18,6 +18,10 @@ interface AuthContextType {
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
+// Configure Axios
+const API_URL = import.meta.env.VITE_API_URL || '';
+axios.defaults.baseURL = API_URL;
+
 export const AuthProvider = ({ children }: { children: ReactNode }) => {
   const [user, setUser] = useState<User | null>(null);
   const [token, setToken] = useState<string | null>(null);

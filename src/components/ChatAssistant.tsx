@@ -49,7 +49,7 @@ const ChatAssistant = () => {
         });
         
         setImagePreview(null);
-        setMessages(prev => []);
+        setMessages(() => []);
       } else {
         response = await axios.post('/api/chat', {
           message: input,
