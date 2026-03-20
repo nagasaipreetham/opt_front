@@ -18,7 +18,8 @@ const Login = () => {
 
     try {
       await login(username, password);
-      const user = JSON.parse(localStorage.getItem('user') || '{}');
+      const storedUser = localStorage.getItem('user');
+      const user = storedUser && storedUser !== 'undefined' ? JSON.parse(storedUser) : {};
       navigate(user.role === 'admin' ? '/admin' : '/patient');
     } catch (err: any) {
       setError(err.response?.data?.message || 'Login failed');
